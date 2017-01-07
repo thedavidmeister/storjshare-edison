@@ -1,18 +1,5 @@
 #!/usr/bin/env bash
 
-# https://github.com/Storj/storjshare-cli
-
-echo "=> Ensuring ~/.bashrc"
-touch ~/.bashrc
-
-echo "=> Installing nvm"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
-
-echo "=> Sourcing ~/.bashrc"
-source ~/.bashrc
-
-echo "=> Installing node"
-
 # http://alextgalileo.altervista.org/edison-package-repo-configuration-instructions.html
 
 "src/gz all http://repo.opkg.net/edison/repo/all\nsrc/gz edison http://repo.opkg.net/edison/repo/edison\nsrc/gz core2-32 http://repo.opkg.net/edison/repo/core2-32" > /etc/opkg/base-feeds.conf
@@ -29,6 +16,19 @@ make configure
 ./configure --prefix=/usr
 make all
 make install
+
+# https://github.com/Storj/storjshare-cli
+
+echo "=> Ensuring ~/.bashrc"
+touch ~/.bashrc
+
+echo "=> Installing nvm"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
+
+echo "=> Sourcing ~/.bashrc"
+source ~/.bashrc
+
+echo "=> Installing node"
 
 nvm install 6.9.1
 
