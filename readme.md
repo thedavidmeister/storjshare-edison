@@ -1,1 +1,1 @@
-`https://goo.gl/xJTv1F | bash`
+`curl -sSL https://goo.gl/xJTv1F | bash`
